@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sahil's personal developer portfolio">
+  <title>Sahil | Developer Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #080b14;
+      --card: #111827;
+      --primary: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(8, 11, 20, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      background: radial-gradient(
+        circle at top,
+        #172554 0%,
+        #080b14 65%
+      );
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 65px);
+      margin: 15px 0;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      color: var(--primary);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #07111d;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin: 5px;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 25px #38bdf855;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    .about {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Skills */
+    .skills-grid,
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(220px, 1fr)
+      );
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 28px;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: var(--primary);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .skill-icon {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #1e293b;
+      color: var(--muted);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav ul {
+        gap: 15px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">SAHIL.</a>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content container">
+      <div class="tag">Welcome to my portfolio</div>
+
+      <h1>Hi, I'm <span>Sahil</span></h1>
+
+      <p>
+        I'm a Student and Aspiring Developer.
+        I love coding, creating websites and
+        learning new technologies.
+      </p>
+
+      <a href="#projects" class="btn">View My Work</a>
+
+      <a href="#contact" class="btn btn-outline">
+        Contact Me
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+
+      <div class="about">
+        <p>
+          Hello! I'm Sahil, a student passionate about
+          web development and programming.
+
+          I enjoy creating beautiful, responsive websites
+          using HTML, CSS and JavaScript. I also enjoy
+          learning Python and exploring new technologies.
+
+          My goal is to become a skilled developer and
+          build useful real-world applications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+
+      <div class="skills-grid">
+
+        <div class="card">
+          <div class="skill-icon">🌐</div>
+          <h3>HTML</h3>
+          <p>Building structured and accessible web pages.</p>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">🎨</div>
+          <h3>CSS</h3>
+          <p>Designing beautiful and responsive websites.</p>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>Making websites interactive and dynamic.</p>
+        </div>
+
+        <div class="card">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Learning programming and problem solving.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+
+      <div class="projects-grid">
+
+        <div class="card">
+          <h3>🌐 Portfolio Website</h3>
+          <p>
+            A personal website to showcase my skills
+            and development journey.
+          </p>
+          <br>
+          <a href="https://github.com/sahil12-dot"
+             target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>🎨 Web Design</h3>
+          <p>
+            A creative webpage designed using
+            HTML and CSS.
+          </p>
+          <br>
+          <a href="https://github.com/sahil12-dot"
+             target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </div>
+
+        <div class="card">
+          <h3>🐍 Python Projects</h3>
+          <p>
+            Beginner-friendly Python programs
+            and coding experiments.
+          </p>
+          <br>
+          <a href="https://github.com/sahil12-dot"
+             target="_blank" rel="noopener">
+            View on GitHub →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container contact">
+      <h2 class="section-title">
+        Contact <span>Me</span>
+      </h2>
+
+      <p>
+        Let's connect and build something amazing together!
+      </p>
+
+      <a href="https://github.com/sahil12-dot"
+         target="_blank" rel="noopener"
+         class="btn">
+        GitHub Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Sahil. Made with ❤️ and Code.</p>
+    <p>Keep Learning | Keep Growing 🚀</p>
+  </footer>
+
+  <script>
+    // Simple welcome message
+    console.log("Welcome to Sahil's Portfolio!");
+
+    // Smooth reveal animation
+    const cards = document.querySelectorAll(".card");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(25px)";
+      card.style.transition = "opacity 0.6s, transform 0.6s";
+      observer.observe(card);
+    });
+  </script>
+
+</body>
+</html>
